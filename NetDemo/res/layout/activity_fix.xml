@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="管理分组"
+       android:layout_marginTop="10dp"
+       android:textSize="22sp"
+       android:textColor="#0672D4"
+       android:layout_marginLeft="15dp">
+
+	</TextView>
+	<View
+        android:background="@android:color/darker_gray"
+        android:layout_height="1dp"
+        android:layout_width="fill_parent"/>
+    <ListView
+        android:id="@+id/lv_fix_group"
+        android:layout_marginTop="10dp"
+        android:listSelector="@android:color/transparent"
+        android:background="@android:color/background_light"
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent" ></ListView>
+    <TextView
+        android:id="@+id/fix_empty"
+        android:gravity="center"
+        android:text="已经没有了！"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

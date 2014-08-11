@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	<TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="号码修改"
+       android:layout_marginTop="10dp"
+       android:textSize="22sp"
+       android:textColor="#0672D4"
+       android:layout_marginLeft="15dp">
+	</TextView>
+   <EditText
+        android:id="@+id/et_update_num"
+        android:layout_marginTop="15dp"
+        style="@style/edit_style"
+        android:hint="请输入新号码"
+        android:ems="11" >
+    </EditText>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content">
+        <Button 
+            android:text="取消"
+            style="@style/button_style"/>
+        <Button
+            android:id="@+id/bt_update"
+            android:text="修改" 
+            style="@style/button_style"/>
+    </LinearLayout>
+
+</LinearLayout>

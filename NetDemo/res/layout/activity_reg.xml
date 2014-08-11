@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="用户注册"
+       android:layout_marginTop="10dp"
+       android:textSize="22sp"
+       android:textColor="#0672D4"
+       android:layout_marginLeft="15dp">
+
+</TextView>
+   <EditText
+        android:id="@+id/et_user"
+        style="@style/edit_style"
+        android:drawablePadding="5dp"
+        android:layout_marginTop="15dp"
+        android:hint="    姓名" >
+    </EditText>
+
+    <EditText
+        android:hint="    请输入手机号" 
+        android:id="@+id/et_phone"
+        android:inputType="phone"
+        style="@style/edit_style"
+        />
+    <EditText 
+        android:id="@+id/et_pwd"
+        android:hint="  请输入密码"
+        style="@style/edit_style"
+        android:inputType="textPassword"
+        />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="match_parent"
+	 	android:layout_width="match_parent"
+	 	>
+	 	<Button 
+	 	    android:id="@+id/bt_cancle"
+	 	    android:text="取消"
+	 	    style="@style/button_style"/>
+	 	<Button 
+	 	    android:id="@+id/bt_reg"
+	 	    android:text="注册"
+	 	    style="@style/button_style"/>
+	</LinearLayout>
+
+
+</LinearLayout>
