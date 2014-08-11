@@ -1,59 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:background="@android:color/white"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
-	<LinearLayout 
-	    android:layout_height="45dp"
-	    android:layout_width="fill_parent"
-	    android:gravity="center"
-	    android:layout_gravity="center"
-	    android:fadingEdge="none"
-	    android:orientation="horizontal">
-	   <TextView
-	        android:id="@+id/tv_manager"
-	        android:text="管理"
-	        android:gravity="center"
-	        android:textSize="18sp"
-	        android:textColor="@color/blue"
-	        android:layout_marginLeft="5dp"
-	    	android:layout_height="40dp"
-	    	android:layout_width="60dp"/>
-	   <TextView
-	       android:gravity="center"
-	       android:text="云讯"
-	       android:layout_weight="1"
-	       android:textColor="@color/blue"
-	       android:textSize="18sp"
-	       android:layout_height="40dp"
-	    	android:layout_width="0dp"/>
-	   <ImageView
-	       android:id="@+id/iv_do_not_konw"
-	       android:layout_gravity="center"
-	       android:gravity="center"
-	       android:scaleType="center"
-	       android:src="@drawable/dzc"
-	       android:layout_marginRight="5dp"
-	       android:layout_height="40dp"
-	       android:layout_width="60dp"/>
-	</LinearLayout>
-	<View
-        android:background="@android:color/darker_gray"
-        android:layout_height="1dp"
-        android:layout_width="fill_parent"/>
-    <com.example.netdemo.view.MyExpendListView
-        android:id="@+id/expandableListView1"
-        android:layout_width="match_parent"
-        android:groupIndicator="@null"
-        android:cacheColorHint="@android:color/transparent"
-        android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp"
-        android:listSelector="@android:color/transparent"
-        android:footerDividersEnabled="true"
-        android:headerDividersEnabled="false"
-        android:background="@android:color/white"
-        android:layout_height="match_parent">		   
-    </com.example.netdemo.view.MyExpendListView>
-   
-
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="45.0dip">
+        <TextView android:textSize="18.0sp" android:textColor="@color/blue" android:gravity="center" android:id="@id/tv_manager" android:layout_width="60.0dip" android:layout_height="40.0dip" android:layout_marginLeft="5.0dip" android:text="管理" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/blue" android:gravity="center" android:layout_width="0.0dip" android:layout_height="40.0dip" android:text="云讯" android:layout_weight="1.0" />
+        <ImageView android:gravity="center" android:layout_gravity="center" android:id="@id/iv_do_not_konw" android:layout_width="60.0dip" android:layout_height="40.0dip" android:layout_marginRight="5.0dip" android:src="@drawable/dzc" android:scaleType="center" />
+    </LinearLayout>
+    <View android:background="@android:color/darker_gray" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <wuliao.in.contact.view.MyExpendListView android:id="@id/expandableListView1" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:cacheColorHint="@android:color/transparent" android:groupIndicator="@null" android:divider="@android:color/darker_gray" android:dividerHeight="1.0dip" android:headerDividersEnabled="false" android:footerDividersEnabled="true" />
 </LinearLayout>

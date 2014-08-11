@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="white">#FFFFFF</color>
-    <color name="gray">#FFFAFA</color>
-    <color name="pink">#fb5b7f</color>
-    <color name="black">#000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="gray">#fffffafa</color>
+    <color name="pink">#fffb5b7f</color>
+    <color name="black">#ff000000</color>
     <color name="head">#ffb10000</color>
-    <color name="lightwhite">#ddd</color>  
+    <color name="lightwhite">#ffdddddd</color>
     <color name="trans">#55000000</color>
-    <color name="red">#FF0000</color>
-	<color name="divide">#cccccc</color>
-	<color name="blue">#007cff</color>
-	
+    <color name="red">#ffff0000</color>
+    <color name="divide">#ffcccccc</color>
+    <color name="blue">#ff007cff</color>
 </resources>

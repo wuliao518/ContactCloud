@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="bottom"
-    android:background="@drawable/name"
-    android:orientation="horizontal" >
-
-    <Button
-        android:id="@+id/bt_name_reg"
-        android:layout_width="0dp"
-        android:layout_height="38dp"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_weight="1"
-        android:background="@drawable/regist__bg_selector"
-        android:text="注册" />
-
-    <Button
-        android:id="@+id/bt_name_login"
-        android:layout_width="0dp"
-        android:layout_height="38dp"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_weight="1"
-        android:background="@drawable/regist__bg_selector"
-        android:text="登录" />
-
+<LinearLayout android:layout_gravity="bottom" android:orientation="horizontal" android:background="@drawable/name" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:layout_gravity="bottom" android:id="@id/bt_name_reg" android:background="@drawable/regist__bg_selector" android:layout_width="0.0dip" android:layout_height="38.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="10.0dip" android:text="注册" android:layout_weight="1.0" />
+    <Button android:layout_gravity="bottom" android:id="@id/bt_name_login" android:background="@drawable/regist__bg_selector" android:layout_width="0.0dip" android:layout_height="38.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="10.0dip" android:text="登录" android:layout_weight="1.0" />
 </LinearLayout>

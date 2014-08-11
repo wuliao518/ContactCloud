@@ -1,78 +1,15 @@
-<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@android:id/tabhost"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" >
-        <FrameLayout
-            android:id="@android:id/tabcontent"
-            android:layout_width="match_parent"
-            android:layout_height="0.0dip"
-            android:layout_weight="1.0"/>
-        <TabWidget
-            android:id="@android:id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_weight="0.0"
-             />
-        <View
-            android:layout_width="fill_parent"
-            android:background="@android:color/darker_gray"
-            android:layout_height="1dp"/>
-       <RadioGroup
-            android:id="@+id/home_radio_button_group"
-            android:layout_width="match_parent"
-            android:layout_height="60dip"
-            android:layout_gravity="bottom"
-            android:background="@android:color/white"
-            android:gravity="center_vertical"
-            android:orientation="horizontal" >
-            <RadioButton
-                android:id="@+id/home_tab_main"
-                android:text="@string/group"
-                android:textSize="14sp"
-                style="@style/home_tab_bottom"
-                android:drawableTop="@drawable/group_selector"           
-                android:checked="true"/>
-              <RadioButton
-                android:id="@+id/home_tab_group"
-                android:text="@string/home"
-                android:drawableTop="@drawable/local_selector"
-                android:textSize="14sp"
-                style="@style/home_tab_bottom" />
-            <RadioButton
-                android:id="@+id/home_tab_search"
-                android:text="@string/search"
-                android:textSize="14sp"
-                android:drawableTop="@drawable/search2_selector"
-                style="@style/home_tab_bottom"/>
-
-            <RadioButton
-                android:id="@+id/home_tab_personal"
-                android:text="@string/setting"
-                android:drawableTop="@drawable/setting_selector"
-                android:textSize="14sp"
-                style="@style/home_tab_bottom" />
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost android:id="@android:id/tabhost" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:id="@android:id/tabcontent" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+        <TabWidget android:id="@android:id/tabs" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.0" />
+        <View android:background="@android:color/darker_gray" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <RadioGroup android:gravity="center_vertical" android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/home_radio_button_group" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="60.0dip">
+            <RadioButton android:textSize="14.0sp" android:id="@id/home_tab_main" android:checked="true" android:text="@string/group" android:drawableTop="@drawable/group_selector" style="@style/home_tab_bottom" />
+            <RadioButton android:textSize="14.0sp" android:id="@id/home_tab_group" android:text="@string/home" android:drawableTop="@drawable/local_selector" style="@style/home_tab_bottom" />
+            <RadioButton android:textSize="14.0sp" android:id="@id/home_tab_search" android:text="@string/search" android:drawableTop="@drawable/search2_selector" style="@style/home_tab_bottom" />
+            <RadioButton android:textSize="14.0sp" android:id="@id/home_tab_personal" android:text="@string/setting" android:drawableTop="@drawable/setting_selector" style="@style/home_tab_bottom" />
         </RadioGroup>
     </LinearLayout>
-
 </TabHost>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

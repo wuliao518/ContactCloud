@@ -1,68 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical" >
-    
-    <RelativeLayout 
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/black"
-        >
-        
-        <FrameLayout 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dip"
-            android:layout_centerVertical="true"
-            >
-            
-            <ImageView 
-                android:id="@+id/arrow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/arrow"
-                android:layout_gravity="center_vertical"
-                />
-		    <ProgressBar
-		        android:id="@+id/progressBar"
-		        style="?android:attr/progressBarStyleSmall"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content" 
-		        android:layout_gravity="center_vertical"
-		        android:visibility="gone"
-		        />
-            
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_centerVertical="true">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/arrow" />
+            <ProgressBar android:layout_gravity="center_vertical" android:id="@id/progressBar" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/progressBarStyleSmall" />
         </FrameLayout>
-        
-        <LinearLayout 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-			android:layout_centerHorizontal="true"
-            >
-            
-            <TextView 
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:text="Pull_to_refresh"
-                android:layout_gravity="center"
-                />
-            
-            <TextView 
-                android:id="@+id/last_update"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-               	android:textSize="10sp"
-               	android:textColor="#b89766"
-               	android:text="Last_update_time"
-               	android:layout_gravity="center"
-                />
-            
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true">
+            <TextView android:textColor="@android:color/white" android:layout_gravity="center" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pull_to_refresh" />
+            <TextView android:textSize="10.0sp" android:textColor="#ffb89766" android:layout_gravity="center" android:id="@id/last_update" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Last_update_time" />
         </LinearLayout>
-        
     </RelativeLayout>
-
 </LinearLayout>

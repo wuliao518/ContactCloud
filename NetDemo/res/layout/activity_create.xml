@@ -1,42 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
-	<TextView
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="创建分组"
-       android:layout_marginTop="10dp"
-       android:textSize="22sp"
-       android:textColor="#0672D4"
-       android:layout_marginLeft="15dp">
-
-	</TextView>
-    <EditText
-        android:id="@+id/et_create_name"
-        android:layout_marginTop="15dp"
-        android:hint="    组名"
-        style="@style/edit_style">
-    </EditText>
-
-    <EditText
-        android:id="@+id/et_create_desc"
-        style="@style/edit_style"
-        android:hint="    描述"
-        
-        android:inputType="textMultiLine" />
-	<LinearLayout
-	    android:layout_width="match_parent"
-   	 	android:layout_height="match_parent"
-    	android:orientation="horizontal" >>
-	    <Button
-	        android:id="@+id/bt_create_button1"
-	        style="@style/button_style"
-	        android:text="取消" />
-	    <Button
-	        android:id="@+id/bt_create_button2"
-	        style="@style/button_style"
-	        android:text="创建" />
-	</LinearLayout>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="22.0sp" android:textColor="#ff0672d4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="10.0dip" android:text="创建分组" />
+    <EditText android:id="@id/et_create_name" android:layout_marginTop="15.0dip" android:hint="组名" style="@style/edit_style" />
+    <EditText android:gravity="top|left|center" android:id="@id/et_create_desc" android:layout_height="132.0dip" android:hint="描述：最多可输入140字" android:inputType="textMultiLine" style="@style/edit_style" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">>
+<Button android:id="@id/bt_create_button1" android:text="取消" style="@style/button_style" />
+        <Button android:id="@id/bt_create_button2" android:text="创建" style="@style/button_style" />
+    </LinearLayout>
 </LinearLayout>

@@ -1,79 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
-
-    <RelativeLayout
-        android:id="@+id/search_bar_ly"
-        android:layout_width="fill_parent"
-        android:layout_height="50.0dip"
-        android:background="@drawable/search_bar_ly_bg" >
-        <RelativeLayout
-            android:id="@+id/backlayout"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:gravity="center"
-            android:paddingRight="5dip"
-             >
-            <ImageView
-                android:id="@+id/back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:background="@drawable/searchbar_back_button_bg" />
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/search_bar_ly" android:background="@android:color/background_light" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <RelativeLayout android:gravity="center" android:id="@id/backlayout" android:paddingRight="5.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <ImageView android:id="@id/back" android:background="@drawable/searchbar_back_button_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" />
         </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/backlayout"
-            android:paddingRight="60dip"
-            android:paddingLeft="8dip"
-            android:id="@+id/search">           
-            <EditText
-                android:id="@+id/search_text"
-                android:layout_width="fill_parent"
-                android:layout_height="40dip"
-                android:background="@drawable/search_edit_bg"
-                android:hint="搜索分组"
-                android:paddingLeft="28.0dip"
-                android:paddingRight="28.0dip"
-                android:layout_marginTop="6dip"
-                android:singleLine="true"
-                android:textColor="#ff727272"
-                android:textColorHint="#ff999999"
-                android:textSize="14.0sp" />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="8.0dip"
-                android:src="@drawable/searchbar_icon" />  
-                             
+        <RelativeLayout android:id="@id/search" android:paddingLeft="8.0dip" android:paddingRight="60.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/backlayout">
+            <EditText android:textSize="14.0sp" android:textColor="#ff727272" android:textColorHint="#ff999999" android:id="@id/search_text" android:background="@drawable/search_edit_bg" android:paddingLeft="28.0dip" android:paddingRight="28.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="6.0dip" android:hint="搜索分组" android:singleLine="true" />
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:src="@drawable/searchbar_icon" android:layout_centerVertical="true" />
         </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent" 
-            android:layout_alignParentRight="true"
-            android:paddingLeft="10dip"
-            android:paddingRight="10dip"
-             >
-        <TextView
-            android:id="@+id/tv_search" 
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:gravity="center"
-            android:text="搜索"
-            android:textColor="@color/blue"
-            android:textSize="16sp"            
-            />
+        <RelativeLayout android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true">
+            <TextView android:textSize="16.0sp" android:textColor="@color/blue" android:gravity="center" android:id="@id/tv_search" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="搜索" />
         </RelativeLayout>
-        
     </RelativeLayout>
-	<ListView
-	    android:layout_below="@id/search_bar_ly"
-	    android:id="@+id/lv_search_group"
-	    android:listSelector="@android:color/transparent"
-	    android:layout_width="fill_parent"
-	    android:layout_height="fill_parent"/>
+    <View android:background="@android:color/darker_gray" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignBottom="@id/search_bar_ly" />
+    <ListView android:id="@id/lv_search_group" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:cacheColorHint="@android:color/transparent" android:layout_below="@id/search_bar_ly" />
 </RelativeLayout>
