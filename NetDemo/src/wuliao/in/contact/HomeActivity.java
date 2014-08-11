@@ -10,22 +10,21 @@ import wuliao.in.contact.db.SQLiteDao;
 import wuliao.in.contact.domain.Group;
 import wuliao.in.contact.domain.User;
 import wuliao.in.contact.net.GroupConnection;
-import wuliao.in.contact.net.UserConnection;
 import wuliao.in.contact.net.GroupConnection.FailCallback;
 import wuliao.in.contact.net.GroupConnection.SuccessCallback;
+import wuliao.in.contact.net.UserConnection;
 import wuliao.in.contact.provider.ProviderUtils;
 import wuliao.in.contact.utils.PublicUtils;
 import wuliao.in.contact.view.MyExpendListView;
 import wuliao.in.contact.view.MyExpendListView.OnRefreshListener;
 import android.app.Activity;
-import android.app.ProgressDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.opengl.Visibility;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -37,12 +36,12 @@ import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListView;
-import android.widget.PopupWindow;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.ExpandableListView.OnGroupExpandListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,7 +55,7 @@ public class HomeActivity extends Activity implements OnClickListener{
 	private TextView mTmanager;
 	private ImageView mImageCreate;
 	private PopupWindow localPopupWindow;
-	private ProgressDialog progress;
+	private Dialog progress;
 	private List<Group> groups=new ArrayList<Group>();
 	private Map<Integer,List<User>> mUsers=new HashMap<Integer,List<User>>(); 
 	@Override
@@ -67,7 +66,7 @@ public class HomeActivity extends Activity implements OnClickListener{
 		sp=getSharedPreferences("token", Activity.MODE_PRIVATE);
 		user_id=sp.getString("user_id", null);
 		dao=new SQLiteDao(getApplicationContext());
-		progress=new ProgressDialog(HomeActivity.this);
+		progress=PublicUtils.createLoadingDialog(HomeActivity.this,"正在加载");
 		adapter=new MyAdapter();
 		provider=new ProviderUtils(getApplicationContext());
 		initView();
@@ -80,8 +79,6 @@ public class HomeActivity extends Activity implements OnClickListener{
 			}
 			expend.setAdapter(adapter);
 		}else{
-			progress.setTitle("测试");
-			progress.setMessage("正在加载中");
 			progress.show();
 			loadDate();
 		}	
@@ -219,7 +216,7 @@ public class HomeActivity extends Activity implements OnClickListener{
 				expend.setAdapter(adapter);
 				//adapter.notifyDataSetChanged();
 				//tv1.setVisibility(View.VISIBLE);
-				Drawable drawable=getResources().getDrawable(R.drawable.home_bg);
+				Drawable drawable=getResources().getDrawable(R.drawable.bg_bitmap);
 				expend.setBackgroundDrawable(drawable);
 			}
 		},new String[]{"user_id",user_id});

@@ -9,6 +9,7 @@ import wuliao.in.contact.net.LoginConnection.FailCallback;
 import wuliao.in.contact.net.LoginConnection.SuccessCallback;
 import wuliao.in.contact.utils.PublicUtils;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -23,6 +24,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 	private EditText mPhone,mPassword;
 	private Button mCancle,mLogin;
 	private SharedPreferences sp;
+	private Dialog dialog;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -35,6 +37,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 		mPassword=(EditText) findViewById(R.id.et_login_password);
 		mCancle=(Button) findViewById(R.id.bt_login_cancel);
 		mLogin=(Button) findViewById(R.id.bt_login_login);
+		dialog=PublicUtils.createLoadingDialog(LoginActivity.this, "正在登陆");
 		sp=getSharedPreferences("token",Activity.MODE_PRIVATE);
 		mCancle.setOnClickListener(this);
 		mLogin.setOnClickListener(this);
@@ -43,6 +46,8 @@ public class LoginActivity extends Activity implements OnClickListener{
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.bt_login_cancel:
+			Intent intent=new Intent(LoginActivity.this,NameActivity.class);
+			startActivity(intent);
 			finish();
 			break;
 		case R.id.bt_login_login:
@@ -51,10 +56,12 @@ public class LoginActivity extends Activity implements OnClickListener{
 			if(phone==null||password==null){
 				Toast.makeText(getApplicationContext(), "填写不正确", 0).show();
 			}else{
+				dialog.show();
 				new LoginConnection(Config.URL, "User", "login", "POST", 
 						new SuccessCallback() {				
 							@Override
 							public void onSuccess(List<User> users,String token) {
+								dialog.dismiss();
 								Editor edit=sp.edit();
 								edit.putString("token", token);
 								edit.putString("user_id", users.get(0).getUserId());
@@ -69,6 +76,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 						}, new FailCallback() {			
 							@Override
 							public void onFail(String code) {
+								dialog.dismiss();
 								Toast.makeText(getApplicationContext(), "用户名或密码错误", 0).show();
 							}
 						}, new String[]{"phone_num",PublicUtils.encode(phone),"password",password});

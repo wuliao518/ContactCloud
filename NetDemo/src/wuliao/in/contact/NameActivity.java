@@ -28,10 +28,12 @@ public class NameActivity extends Activity implements OnClickListener{
 		case R.id.bt_name_reg:
 			Intent reg=new Intent(this,RegistActivity.class);
 			startActivity(reg);
+			finish();
 			break;
 		case R.id.bt_name_login:
 			Intent login=new Intent(this,LoginActivity.class);
 			startActivity(login);
+			finish();
 			break;
 		default:
 			break;

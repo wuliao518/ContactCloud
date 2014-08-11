@@ -22,6 +22,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -105,10 +106,10 @@ public class SettingActivity extends Activity implements OnClickListener{
 			Toast.makeText(getApplicationContext(), "有什么好设置的!", 0).show();
 			break;
 		case R.id.about:
-			AlertDialog.Builder build=new AlertDialog.Builder(SettingActivity.this);
-			build.setTitle("关于");
-			build.setMessage("code by wuliao");
-			build.show();
+
+			AlertDialog.Builder localBuilder = new AlertDialog.Builder(this);
+		    localBuilder.setView(LayoutInflater.from(getApplicationContext()).inflate(R.layout.about, null));
+		    localBuilder.show();
 			break;
 		case R.id.ll_exit_user:
 			DeleteConnection conn=new DeleteConnection(Config.URL, "User", "exitUser", 
