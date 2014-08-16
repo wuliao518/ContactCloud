@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	 <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15.0dip"
+        android:layout_marginTop="10.0dip"
+        android:text="意见反馈"
+        android:textColor="#ff0672d4"
+        android:textSize="22.0sp" />
+    <EditText
+        android:layout_marginTop="10dp"
+        android:id="@+id/et_option"
+        android:hint="您可以输入500字呢！"
+        android:drawableLeft="@null"
+        style="@style/edit_style"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+		android:gravity="left"
+        android:inputType="textMultiLine" 
+        >
+        <requestFocus />
+    </EditText>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content">
+	    <Button
+	        android:text="提交"
+	        android:layout_width="match_parent"
+	        android:id="@+id/bt_option"
+	        style="@style/button_style"/>
+	</LinearLayout>
+</LinearLayout>

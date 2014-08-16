@@ -8,17 +8,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import wuliao.in.contact.adapter.SortListAdapter;
-import wuliao.in.contact.config.Config;
 import wuliao.in.contact.domain.Contact;
-import wuliao.in.contact.domain.Group;
-import wuliao.in.contact.net.JSONConnection;
-import wuliao.in.contact.net.JSONConnection.FailCallback;
-import wuliao.in.contact.net.JSONConnection.SuccessCallback;
 import wuliao.in.contact.view.ClearEditText;
 import wuliao.in.contact.view.SideBar;
 import wuliao.in.contact.view.SideBar.OnTouchingLetterChangedListener;
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -29,9 +25,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class LocalActivity extends Activity {
@@ -69,11 +63,15 @@ public class LocalActivity extends Activity {
 		});
 		
 		mLocaList.setOnItemClickListener(new OnItemClickListener() {
-
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				
+				String phone_num=contacts.get(position).getPhonenum();
+				Intent intent=new Intent();
+				intent.setAction(Intent.ACTION_CALL);
+				Uri uri=Uri.parse("tel:"+phone_num);
+				intent.setData(uri);
+				startActivity(intent);
 				
 				
 				
@@ -118,18 +116,14 @@ public class LocalActivity extends Activity {
 				}	
 			}
 		});
-		
-		
 	}
 	private void fillData(String string) {
-		//contacts.clear();
 		List<Contact> lists=new ArrayList<Contact>();
 		if(TextUtils.isEmpty(string)){
-			lists=loadData();
+			lists=contacts;
 		}else{
 			for(Contact contact:contacts){
-				if(contact.getSortKey().contains(string.substring(0,1))||contact.getName().contains(string)){
-					
+				if(contact.getSortKey().contains(string.substring(0,1).toUpperCase())||contact.getName().contains(string)){
 					lists.add(contact);
 				}							
 			}
@@ -138,6 +132,7 @@ public class LocalActivity extends Activity {
 		mLocaList.setAdapter(adapter);
 	}
 	private List<Contact> loadData() {
+		contacts.clear();
 		ContentResolver resolver=getContentResolver();
 		Cursor cursor=resolver.query(Uri.parse("content://com.android.contacts/data/phones"),
 				new String[] { "display_name", "sort_key", "contact_id","data1" },null,null,"sort_key");//"display_name COLLATE LOCALIZED"

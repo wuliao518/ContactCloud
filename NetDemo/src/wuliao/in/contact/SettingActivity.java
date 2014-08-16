@@ -30,7 +30,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class SettingActivity extends Activity implements OnClickListener{
-	private LinearLayout mLexit,mLmanager,mVersion,mSetting,mAbout;
+	private LinearLayout mLexit,mLmanager,mVersion,mSetting,mAbout,mLayoutIdea;
 	private String token,phone_num;
 	private SharedPreferences sp;
 	private ProgressDialog process;;
@@ -70,6 +70,8 @@ public class SettingActivity extends Activity implements OnClickListener{
 		mVersion=(LinearLayout) findViewById(R.id.version);
 		mSetting=(LinearLayout) findViewById(R.id.layoutSet);
 		mAbout=(LinearLayout) findViewById(R.id.about);
+		mLayoutIdea=(LinearLayout) findViewById(R.id.layoutIdea);
+		mLayoutIdea.setOnClickListener(this);
 		mSetting.setOnClickListener(this);
 		mAbout.setOnClickListener(this);
 		process=new ProgressDialog(this);
@@ -138,15 +140,14 @@ public class SettingActivity extends Activity implements OnClickListener{
 						@Override
 						public void onSuccess(final String path,String version) {
 							PublicUtils utils=new PublicUtils(getApplicationContext(), sp);
-							if(Float.parseFloat(version)>Float.parseFloat(utils.getVersion())){
-								
+							if(Float.parseFloat(version)>Float.parseFloat(utils.getVersion())){				
 								if (Environment.getExternalStorageState().equals(
 										Environment.MEDIA_MOUNTED)) {
 									Message msg=new Message();
 									msg.what=0;
 									handle.handleMessage(msg);									
 									apkPath = Environment.getExternalStorageDirectory()
-											+ "/NetDemo.apk";
+											+ "/ContactCloud.apk";
 										new Thread(){
 											@Override
 											public void run() {
@@ -180,6 +181,9 @@ public class SettingActivity extends Activity implements OnClickListener{
 					}, new String[]{"version","version"});
 
 			break;
+		case R.id.layoutIdea:
+			Intent intent=new Intent(SettingActivity.this,OptionActivity.class);
+			startActivity(intent);
 		default:
 			break;
 		}

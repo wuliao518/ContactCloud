@@ -45,6 +45,7 @@
         <activity android:name=".FixGroup" android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <activity android:name=".UpdateUserInfo" android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
 		<activity android:name=".CreateGroup" android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+		<activity android:name=".OptionActivity" android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <uses-library android:name="android.test.runner" android:theme="@android:style/Theme.Light.NoTitleBar"/>
     </application>
 </manifest>

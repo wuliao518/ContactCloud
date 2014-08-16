@@ -13,21 +13,20 @@ public class UpdateConnection {
 				@Override
 				public void onSuccess(String result) {
 					try {
-						System.out.println(result);
 						JSONObject jsonObj=new JSONObject(result);				
 						switch(jsonObj.getInt("status")){
 						case 1:successCallback.onSuccess();break;
-						case 0:failCallback.onFail();break;
+						case 0:failCallback.onFail("ºÅÂëËÆºõÒÑ´æÔÚ£¡");break;
 						default:break;
 						}
 					} catch (JSONException e) {
-						failCallback.onFail();
+						failCallback.onFail("Î´Öª´íÎó");
 					}			
 				}		
 		}, new NetConnection.FailCallback() {		
 			@Override
 			public void onFail() {
-				failCallback.onFail();
+				failCallback.onFail("ÍøÂç´íÎó£¬ÇëÉÔºóÖØÊÔ£¡");
 			}
 		}, args);
 	}
@@ -35,6 +34,6 @@ public class UpdateConnection {
 		void onSuccess();
 	}
 	public interface FailCallback{
-		void onFail();
+		void onFail(String msg);
 	}
 }

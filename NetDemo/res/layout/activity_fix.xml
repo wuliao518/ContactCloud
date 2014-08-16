@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@android:color/background_light" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="22.0sp" android:textColor="#ff0672d4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="10.0dip" android:text="管理分组" />
-    <ListView android:id="@id/lv_fix_group" android:background="@android:color/background_light" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip" android:listSelector="@android:color/transparent" />
-    <TextView android:gravity="center" android:id="@id/fix_empty" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="已经没有了！" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/background_light"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15.0dip"
+        android:layout_marginTop="10.0dip"
+        android:text="管理分组"
+        android:textColor="#ff0672d4"
+        android:textSize="22.0sp" />
+
+    <ListView
+        android:id="@id/lv_fix_group"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10.0dip"
+        android:background="@android:color/background_light"
+        android:listSelector="@android:color/transparent" />
+
+    <TextView
+        android:id="@id/fix_empty"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="已经没有了！"
+        android:visibility="visible" />
+
 </LinearLayout>

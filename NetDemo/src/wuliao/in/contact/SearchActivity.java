@@ -14,6 +14,7 @@ import wuliao.in.contact.utils.PublicUtils;
 import wuliao.in.contact.utils.PublicUtils.CallBackListener;
 import wuliao.in.contact.view.ClearEditText;
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -69,8 +70,7 @@ public class SearchActivity extends Activity implements OnClickListener{
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.tv_search:
-			final ProgressDialog dialog=new ProgressDialog(SearchActivity.this);
-			dialog.setMessage("Searching");
+			final Dialog dialog=PublicUtils.createLoadingDialog(SearchActivity.this, "ËÑË÷ÖÐ");
 			dialog.show();
 			final MyAdapter myAdapter=new MyAdapter();
 			String key=mEditText.getText().toString().trim();

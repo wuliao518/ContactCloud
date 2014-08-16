@@ -20,7 +20,6 @@
     <public type="drawable" name="search_bar_edit_selector" id="0x7f02003c" />
     <public type="drawable" name="setting_selector" id="0x7f020047" />
     <public type="drawable" name="sidebar_background" id="0x7f020049" />
-    <public type="drawable" name="tab_textcolor" id="0x7f02004f" />
     <public type="drawable" name="arrow" id="0x7f020000" />
     <public type="drawable" name="dxq" id="0x7f020003" />
     <public type="drawable" name="dzc" id="0x7f020004" />
@@ -36,8 +35,6 @@
     <public type="drawable" name="home_btn_bg_s" id="0x7f020012" />
     <public type="drawable" name="ic_nav_1_active" id="0x7f020014" />
     <public type="drawable" name="ic_nav_1_normal" id="0x7f020015" />
-    <public type="drawable" name="ic_nav_2_active" id="0x7f020016" />
-    <public type="drawable" name="ic_nav_2_normal" id="0x7f020017" />
     <public type="drawable" name="ic_nav_3_active" id="0x7f020018" />
     <public type="drawable" name="ic_nav_3_normal" id="0x7f020019" />
     <public type="drawable" name="ic_nav_4_active" id="0x7f02001a" />
@@ -80,7 +77,6 @@
     <public type="drawable" name="sms1" id="0x7f02004c" />
     <public type="drawable" name="splash" id="0x7f02004d" />
     <public type="drawable" name="switchuser" id="0x7f02004e" />
-    <public type="drawable" name="triangle" id="0x7f020050" />
     <public type="layout" name="about" id="0x7f030000" />
     <public type="layout" name="activity_create" id="0x7f030001" />
     <public type="layout" name="activity_fix" id="0x7f030002" />
@@ -94,7 +90,6 @@
     <public type="layout" name="activity_seting" id="0x7f03000a" />
     <public type="layout" name="activity_splash" id="0x7f03000b" />
     <public type="layout" name="activity_update" id="0x7f03000c" />
-    <public type="layout" name="edit_shape" id="0x7f03000d" />
     <public type="layout" name="group_desc" id="0x7f03000e" />
     <public type="layout" name="group_list" id="0x7f03000f" />
     <public type="layout" name="header" id="0x7f030010" />
@@ -120,15 +115,12 @@
     <public type="color" name="blue" id="0x7f050009" />
     <public type="string" name="app_name" id="0x7f060000" />
     <public type="string" name="home" id="0x7f060001" />
-    <public type="string" name="group" id="0x7f060002" />
     <public type="string" name="search" id="0x7f060003" />
-    <public type="string" name="setting" id="0x7f060004" />
     <public type="style" name="AppBaseTheme" id="0x7f070000" />
     <public type="style" name="AppTheme" id="0x7f070001" />
     <public type="style" name="home_tab_bottom" id="0x7f070002" />
     <public type="style" name="edit_style" id="0x7f070003" />
     <public type="style" name="button_style" id="0x7f070004" />
-    <public type="style" name="loading_dialog" id="0x7f070005" />
     <public type="style" name="Theme_dialog" id="0x7f070006" />
     <public type="id" name="et_create_name" id="0x7f080000" />
     <public type="id" name="et_create_desc" id="0x7f080001" />
@@ -163,7 +155,6 @@
     <public type="id" name="search_bar_ly" id="0x7f08001e" />
     <public type="id" name="backlayout" id="0x7f08001f" />
     <public type="id" name="back" id="0x7f080020" />
-    <public type="id" name="search" id="0x7f080021" />
     <public type="id" name="search_text" id="0x7f080022" />
     <public type="id" name="tv_search" id="0x7f080023" />
     <public type="id" name="lv_search_group" id="0x7f080024" />
@@ -173,7 +164,6 @@
     <public type="id" name="layoutIdea" id="0x7f080028" />
     <public type="id" name="version" id="0x7f080029" />
     <public type="id" name="iconversion" id="0x7f08002a" />
-    <public type="id" name="about" id="0x7f08002b" />
     <public type="id" name="ll_exit_user" id="0x7f08002c" />
     <public type="id" name="ll_splash" id="0x7f08002d" />
     <public type="id" name="tv_version" id="0x7f08002e" />
@@ -184,7 +174,6 @@
     <public type="id" name="tv_manager" id="0x7f080033" />
     <public type="id" name="iv_do_not_konw" id="0x7f080034" />
     <public type="id" name="expandableListView1" id="0x7f080035" />
-    <public type="id" name="arrow" id="0x7f080036" />
     <public type="id" name="progressBar" id="0x7f080037" />
     <public type="id" name="title" id="0x7f080038" />
     <public type="id" name="last_update" id="0x7f080039" />
