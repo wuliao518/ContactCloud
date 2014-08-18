@@ -302,7 +302,6 @@ public class MyExpendListView extends ExpandableListView implements OnScrollList
 			
 			title.setText("ÏÂÀ­Ë¢ÐÂ");
 			arrow.clearAnimation();
-			
 			headView.setPadding(0, -1 * headcontentHeight, 0, 0);
 			break;
 

@@ -13,8 +13,10 @@ import wuliao.in.contact.net.GroupConnection;
 import wuliao.in.contact.net.DeleteConnection.CallBackListener;
 import wuliao.in.contact.net.GroupConnection.FailCallback;
 import wuliao.in.contact.net.GroupConnection.SuccessCallback;
+import wuliao.in.contact.utils.PublicUtils;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -44,7 +46,7 @@ public class FixGroup extends Activity {
 	private SharedPreferences sp;
 	private MyAdapter adapter;
 	private TextView tv;
-	private ProgressDialog progress;
+	private Dialog progress;
 	private Handler handle=new Handler(){
 		@Override
 		public void handleMessage(Message msg) {
@@ -87,9 +89,7 @@ public class FixGroup extends Activity {
 	}
 	private void initView() {
 		mLvFix=(ListView) findViewById(R.id.lv_fix_group);
-		progress=new ProgressDialog(this);
-		progress.setMessage("正在加载中");
-		progress.show();
+		progress=PublicUtils.createLoadingDialog(getApplicationContext(), "正在加载中");
 		tv=(TextView) findViewById(R.id.fix_empty);
 		mLvFix.setOnItemClickListener(new OnItemClickListener() {
 			@Override

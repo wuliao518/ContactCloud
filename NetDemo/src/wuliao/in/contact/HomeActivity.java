@@ -103,25 +103,12 @@ public class HomeActivity extends Activity implements OnClickListener{
 		expend.setOnRefreshListener(new OnRefreshListener() {		
 			@Override
 			public void onRefresh() {		
-				new AsyncTask<Void, Void, Void>(){
-					@Override
-					protected Void doInBackground(Void... params) {
-						loadDate();
-						try {
-							Thread.sleep(1000);
-						} catch (InterruptedException e) {
-							e.printStackTrace();
-						}
-						return null;
-					}
-					@Override
-					protected void onPostExecute(Void result) {
-						super.onPostExecute(result);
-						expend.onRefreshComplete();
-					}
-					
-				}.execute();
-				
+				try {
+					Thread.sleep(1000);
+					loadDate();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
 		});
 		expend.setOnGroupExpandListener(new OnGroupExpandListener(){
@@ -139,7 +126,6 @@ public class HomeActivity extends Activity implements OnClickListener{
 			public boolean onChildClick(ExpandableListView parent, View view,
 					int groupPosition, int childPosition, long id) {
 				String phone_num=PublicUtils.decode(mUsers.get(groupPosition).get(childPosition).getPhonenum());
-				
 				dismissPopUpwindow();
 				// 获取当前view对象在窗体中的位置
 				int[] arrayOfInt = new int[2];
@@ -210,6 +196,7 @@ public class HomeActivity extends Activity implements OnClickListener{
 		},new FailCallback() {
 			@Override
 			public void onFail(String code) {
+				expend.onRefreshComplete();
 				progress.dismiss();
 				groups.clear();
 				mUsers.clear();
@@ -295,6 +282,7 @@ public class HomeActivity extends Activity implements OnClickListener{
 				new UserConnection.SuccessCallback() {
 					@Override
 					public void onSuccess(List<User> users) {
+						expend.onRefreshComplete();
 						mUsers.put(n,users);
 						dao.addGroup(groups.get(n), users);
 						expend.setAdapter(adapter);
@@ -304,7 +292,7 @@ public class HomeActivity extends Activity implements OnClickListener{
 				}, new UserConnection.FailCallback(){
 					@Override
 					public void onFail(String code) {
-						//adapter.notifyDataSetChanged();
+						expend.onRefreshComplete();
 					}
 					
 				}, new String[]{"group_id",group_id});
