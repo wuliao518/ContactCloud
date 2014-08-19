@@ -89,7 +89,8 @@ public class FixGroup extends Activity {
 	}
 	private void initView() {
 		mLvFix=(ListView) findViewById(R.id.lv_fix_group);
-		progress=PublicUtils.createLoadingDialog(getApplicationContext(), "正在加载中");
+		progress=PublicUtils.createLoadingDialog(FixGroup.this, "正在加载中");
+		progress.show();
 		tv=(TextView) findViewById(R.id.fix_empty);
 		mLvFix.setOnItemClickListener(new OnItemClickListener() {
 			@Override

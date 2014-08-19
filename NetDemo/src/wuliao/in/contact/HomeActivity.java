@@ -55,6 +55,7 @@ public class HomeActivity extends Activity implements OnClickListener{
 	private TextView mTmanager;
 	private ImageView mImageCreate;
 	private PopupWindow localPopupWindow;
+	private PublicUtils publicUtils;
 	private Dialog progress;
 	private List<Group> groups=new ArrayList<Group>();
 	private Map<Integer,List<User>> mUsers=new HashMap<Integer,List<User>>(); 
@@ -88,6 +89,7 @@ public class HomeActivity extends Activity implements OnClickListener{
 		mTmanager.setOnClickListener(this);
 		mImageCreate=(ImageView) findViewById(R.id.iv_do_not_konw);
 		mImageCreate.setOnClickListener(this);
+		publicUtils=new PublicUtils(getApplicationContext(), sp);
 		expend=(MyExpendListView) findViewById(R.id.expandableListView1);
 		expend.setOnScrollListener(new OnScrollListener() {
 			@Override
@@ -103,12 +105,7 @@ public class HomeActivity extends Activity implements OnClickListener{
 		expend.setOnRefreshListener(new OnRefreshListener() {		
 			@Override
 			public void onRefresh() {		
-				try {
-					Thread.sleep(1000);
 					loadDate();
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
 			}
 		});
 		expend.setOnGroupExpandListener(new OnGroupExpandListener(){
@@ -186,6 +183,7 @@ public class HomeActivity extends Activity implements OnClickListener{
 			new SuccessCallback() {
 				@Override
 				public void onSuccess(List<Group> strs) {
+					publicUtils.clearDatabase();
 					progress.dismiss();
 					expend.setBackgroundColor(Color.TRANSPARENT);
 					groups=strs;
