@@ -75,6 +75,7 @@ public class MyExpendListView extends ExpandableListView implements OnScrollList
 		headcontentWidth = headView.getMeasuredWidth();
 		headcontentHeight = headView.getMeasuredHeight();
 		
+		
 		//设置headView 与界面上边距的距离
 		headView.setPadding(0, -1 * headcontentHeight, 0, 0);
 		
