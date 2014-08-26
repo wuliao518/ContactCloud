@@ -13,6 +13,7 @@ import wuliao.in.contact.net.GroupConnection;
 import wuliao.in.contact.net.UserConnection;
 import wuliao.in.contact.net.GroupConnection.FailCallback;
 import wuliao.in.contact.net.GroupConnection.SuccessCallback;
+import wuliao.in.contact.utils.PublicUtils;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.widget.Toast;
@@ -74,7 +75,9 @@ public class ProviderUtils {
 		return dao.selectUser(group);
 	}
 	
-	
+	public String getUserInfo(String phoneNum){
+		return dao.getUserInfo(PublicUtils.encode(phoneNum));
+	}
 	
 	
 	

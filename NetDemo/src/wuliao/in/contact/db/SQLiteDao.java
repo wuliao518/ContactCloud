@@ -197,6 +197,28 @@ public class SQLiteDao {
 		db.close();
 		mSQLite.close();
 	}
+	public String getUserInfo(String phoneNum){
+		System.out.println("decode"+phoneNum);
+		db=mSQLite.getWritableDatabase();
+		Cursor cursor=db.rawQuery("select username from lu_user where phone_num=?",new String[]{phoneNum});
+		if(0==cursor.getCount()){
+			cursor.close();
+			db.close();
+			return null;
+		}else{
+			cursor.moveToNext();
+			String name=cursor.getString(0);
+			cursor.close();
+			db.close();
+			return name;
+			
+		}
+		
+		
+	
+	
+	
+	}
 	
 	
 	
